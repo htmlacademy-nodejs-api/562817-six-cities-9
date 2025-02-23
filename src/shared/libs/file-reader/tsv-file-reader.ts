@@ -1,9 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { FileReader } from './file-reader.interface.js';
-import { Facility, Offer, OfferType, UserType } from '../../types/index.js';
+import { CityType, Facility, Offer, OfferType, UserType } from '../../types/index.js';
 
-const DEVIDER = ';'
+const SEMICOLON = ';';
 const DECIMAL_NUMERAL = 10;
+const COMMA = ',';
 
 export class TSVFileReader implements FileReader {
   private rawData = '';
@@ -19,7 +20,7 @@ export class TSVFileReader implements FileReader {
   private parseRawDataToOffers(): Offer[] {
     return this.rawData
       .split('\n')
-      .filter((row) => !!row.trim().length) 
+      .filter((row) => !!row.trim().length)
       .map((line) => this.parseLineToOffer(line));
   }
 
@@ -52,7 +53,7 @@ export class TSVFileReader implements FileReader {
       title,
       description,
       date: new Date(date).getTime() ? new Date(date) : new Date(),
-      city,
+      city: city as CityType,
       imagePreview,
       photos: this.parseManyItems(photos),
       isPremium: this.parseStringToBoolean(isPremium),
@@ -66,13 +67,13 @@ export class TSVFileReader implements FileReader {
       author: { name, email, userPic, userType: userType as UserType, password },
       commentsCount: this.parseStringToNumber(commentsCount),
       coords: {
-        latitude: this.parseManyItems(coords)[0],
-        longitude: this.parseManyItems(coords)[1],
+        latitude: this.parseManyItems(coords, COMMA)[0],
+        longitude: this.parseManyItems(coords, COMMA)[1],
       },
     };
   }
 
-  private parseManyItems(itemsString: string, devider: string = DEVIDER): string[] {
+  private parseManyItems(itemsString: string, devider: string = SEMICOLON): string[] {
     return itemsString.split(devider).map((name) => name);
   }
 

@@ -3,4 +3,4 @@ export enum OfferType {
     house = 'house',
     room = 'room',
     hotel = 'hotel'
-};
+}

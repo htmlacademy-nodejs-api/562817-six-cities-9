@@ -10,7 +10,7 @@ export class ImportCommand implements Command {
     const [filename] = parameters;
 
     if (!filename) {
-      throw new Error('Файл не указан')
+      throw new Error('Файл не указан');
     }
 
     const fileReader = new TSVFileReader(filename.trim());
