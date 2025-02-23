@@ -1,6 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { FileReader } from './file-reader.interface.js';
-import { Facility, Offer, OfferType, User, UserType } from '../../types/index.js';
+import { Facility, Offer, OfferType, UserType } from '../../types/index.js';
+
+const DEVIDER = ';'
+const DECIMAL_NUMERAL = 10;
 
 export class TSVFileReader implements FileReader {
   private rawData = '';
@@ -16,7 +19,7 @@ export class TSVFileReader implements FileReader {
   private parseRawDataToOffers(): Offer[] {
     return this.rawData
       .split('\n')
-      .filter((row) => row.trim().length > 0)
+      .filter((row) => !!row.trim().length) 
       .map((line) => this.parseLineToOffer(line));
   }
 
@@ -43,12 +46,12 @@ export class TSVFileReader implements FileReader {
       password,
       commentsCount,
       coords,
-    ] = line.split('    ');
+    ] = line.split('\t');
 
     return {
       title,
       description,
-      date: new Date(date),
+      date: new Date(date).getTime() ? new Date(date) : new Date(),
       city,
       imagePreview,
       photos: this.parseManyItems(photos),
@@ -60,30 +63,25 @@ export class TSVFileReader implements FileReader {
       guestCount: this.parseStringToNumber(guestCount),
       price: this.parseStringToNumber(price),
       facilities: this.parseManyItems(facilities) as Facility[],
-      author: this.parseUser(name,
-        email,
-        userPic,
-        userType as UserType,
-        password),
+      author: { name, email, userPic, userType: userType as UserType, password },
       commentsCount: this.parseStringToNumber(commentsCount),
-      coords,
+      coords: {
+        latitude: this.parseManyItems(coords)[0],
+        longitude: this.parseManyItems(coords)[1],
+      },
     };
   }
 
-  private parseManyItems(itemsString: string): string[] {
-    return itemsString.split(';').map((name) => name);
+  private parseManyItems(itemsString: string, devider: string = DEVIDER): string[] {
+    return itemsString.split(devider).map((name) => name);
   }
 
   private parseStringToBoolean(value: string): boolean {
-    return !!value;
+    return value === 'true' || false;
   }
 
   private parseStringToNumber(priceString: string): number {
-    return Number.parseInt(priceString, 10);
-  }
-
-  private parseUser(name: string, email: string, userPic: string, userType: UserType, password: string): User {
-    return { name, email, userPic, userType, password };
+    return Number.parseInt(priceString, DECIMAL_NUMERAL);
   }
 
   public read(): void {

@@ -19,5 +19,8 @@ export type Offer = {
   facilities: Facility[]
   author: User
   commentsCount: number
-  coords: string
+  coords: {
+    latitude: string
+    longitude: string
+  }
 }

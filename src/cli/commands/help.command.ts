@@ -13,9 +13,9 @@ export class HelpCommand implements Command {
         Пример:
             cli.js --<command> [--arguments]
         Команды:
-            --version:                   # выводит номер версии
-            --help:                      # печатает этот текст
-            --import <path>:             # импортирует данные из TSV
+            --version:                   # выводит номер версии Node
+            --help:                      # печатает текст подсказки
+            --import <path>:             # импортирует данные из TSV файла переданного в параметре
             --generate <n> <path> <url>  # генерирует произвольное количество тестовых данных
     `));
   }

@@ -1,5 +1,3 @@
-import chalk from 'chalk';
-
 import { TSVFileReader } from '../../shared/libs/file-reader/index.js';
 import { Command } from './command.interface.js';
 
@@ -11,6 +9,10 @@ export class ImportCommand implements Command {
   public execute(...parameters: string[]): void {
     const [filename] = parameters;
 
+    if (!filename) {
+      throw new Error('Файл не указан')
+    }
+
     const fileReader = new TSVFileReader(filename.trim());
     try {
       fileReader.read();
@@ -19,7 +21,7 @@ export class ImportCommand implements Command {
       if (!(err instanceof Error)) {
         throw err;
       }
-      console.error(chalk.underline(`Can't import data from file: ${filename}`));
+      console.error(`Can't import data from file: ${filename}`);
       console.error(`Details: ${err.message}`);
     }
   }
