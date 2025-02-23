@@ -23,7 +23,7 @@ const MIN_COMMENTS = 0;
 const MAX_COMMENTS = 100;
 
 export class TSVOfferGenerator implements OfferGenerator {
-  constructor(private readonly mockData: MockServerData) {}
+  constructor(private readonly mockData: MockServerData) { }
 
   public generate(): string {
     const photos = getRandomItems<string>(this.mockData.photos).join(';');
@@ -40,7 +40,7 @@ export class TSVOfferGenerator implements OfferGenerator {
     const rating = generateRandomValue(MIN_RATING, MAX_RATING, 1).toString();
     const roomCount = generateRandomValue(MIN_ROOMS, MAX_ROOMS).toString();
     const guestCount = generateRandomValue(MIN_GUESTS, MAX_GUESTS).toString();
-    const commentsCount = generateRandomValue(MIN_COMMENTS,  MAX_COMMENTS).toString();
+    const commentsCount = generateRandomValue(MIN_COMMENTS, MAX_COMMENTS).toString();
     const facilities = getRandomItems<string>(this.mockData.facilities).join(';');
     const coords = getRandomItem<string>(this.mockData.coords);
     const isPremium = getRandomItem([true, false]);
@@ -52,27 +52,27 @@ export class TSVOfferGenerator implements OfferGenerator {
       .toISOString();
 
     return [
-        title,
-        description,
-        createdDate,
-        city,
-        imagePreview,
-        photos,
-        isPremium,
-        isFavourite,
-        rating,
-        type,
-        roomCount,
-        guestCount,
-        price,
-        facilities,
-        userName,
-        email,
-        userPic,
-        userType,
-        password,
-        commentsCount,
-        coords,
+      title,
+      description,
+      createdDate,
+      city,
+      imagePreview,
+      photos,
+      isPremium,
+      isFavourite,
+      rating,
+      type,
+      roomCount,
+      guestCount,
+      price,
+      facilities,
+      userName,
+      email,
+      userPic,
+      userType,
+      password,
+      commentsCount,
+      coords,
     ].join('\t');
   }
 }
