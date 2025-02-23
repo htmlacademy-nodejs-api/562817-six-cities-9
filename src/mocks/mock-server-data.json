@@ -1,0 +1,108 @@
+{
+  "api": {
+    "titles": [
+      "Предложение Тёмная башня",
+      "Предложение Стрелок",
+      "Предложение Извлечение троих",
+      "Предложение Куджо",
+      "Предложение Глаза дракона",
+      "Предложение Зелёная миля",
+      "Предложение Кристина",
+      "Предложение Жребий Салема",
+      "Предложение Бегущий человек",
+      "Предложение История Лизи",
+      "Предложение Долгая прогулка",
+      "Предложение Институт",
+      "Предложение Худеющий"
+    ],
+    "descriptions": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a ultrices diam, id volutpat purus. Proin ut tincidunt nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec eros nec odio accumsan aliquet non at libero.",
+      "Quisque eu efficitur lacus, nec semper arcu. Pellentesque luctus, augue et efficitur pretium, quam velit pellentesque nunc, ornare ornare mauris neque eget felis. Duis sodales sagittis purus quis tempor.",
+      "Phasellus sodales, ex et ultrices dictum, turpis quam pharetra justo, ac sagittis lacus urna eget urna. Mauris dignissim odio ut nulla tincidunt, sit amet egestas lorem porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam pellentesque diam ut turpis cursus, hendrerit porta felis dictum. Fusce porta mi vitae magna iaculis, ac maximus ipsum interdum.",
+      "In pellentesque tristique urna at rhoncus. In vitae enim id orci euismod porta. Morbi sit amet vulputate elit. Phasellus quis libero quam. Praesent a mauris lorem.",
+      "Pellentesque nibh orci, scelerisque ut ultrices a, vestibulum sed felis. Donec maximus scelerisque ligula. Vivamus vestibulum sapien ut leo porta laoreet. Donec dictum orci ac urna euismod, et sagittis justo aliquam. Phasellus placerat magna et finibus cursus.",
+      "Morbi vel sem vitae lorem iaculis consequat. Fusce pulvinar euismod elit, in feugiat dui laoreet ac. Phasellus hendrerit arcu id elit mattis, ac vulputate felis tincidunt. ",
+      "Praesent non magna efficitur, pretium ex vitae, scelerisque dui."
+    ],
+    "imagePreviews": [
+      "book.jpg",
+      "institute-book.jpg",
+      "dark-tower.jpg",
+      "shining.jpg",
+      "draft.jpg",
+      "magic.jpg"
+    ],
+    "cities": [
+      "Paris",
+      "Cologne",
+      "Brussels",
+      "Amsterdam",
+      "Hamburg",
+      "Dusseldorf"
+    ],
+    "photos": [
+      "book.jpg",
+      "institute-book.jpg",
+      "dark-tower.jpg",
+      "shining.jpg",
+      "draft.jpg",
+      "magic.jpg"
+    ],
+    "emails": [
+      "snow@pisem.local",
+      "president@dka.local",
+      "fish@big.local",
+      "test@pisem.local",
+      "freedom@pisem.local",
+      "rolan@pochta.local",
+      "author@mir.local",
+      "test@lost.loca",
+      "kujo-fan@story.local"
+    ],
+    "users": [
+      "Иван Иванов",
+      "Олег Сидоров",
+      "Пьер Безухов",
+      "Роланд Дискейн",
+      "Холи Гибни",
+      "Джек Торренс",
+      "Антон Городецкий",
+      "Борис Гесер",
+      "Рокки Бальбоа",
+      "Джон Смит"
+    ],
+    "avatars": [
+      "user.jpg",
+      "photo.jpg",
+      "awesome-avatar.jpg",
+      "roland.jpg",
+      "smite.jpg",
+      "coffee.jpg"
+    ],
+    "facilities": [
+      "Breakfast",
+      "Air conditioning",
+      "Laptop friendly workspace",
+      "Baby seat",
+      "Washer",
+      "Towels",
+      "Fridge"
+    ],
+    "coords": [
+      "48.85661,2.351499",
+      "50.938361,6.959974",
+      "50.846557,4.351697",
+      "52.370216,4.895168",
+      "53.550341,10.000654",
+      "51.225402,6.776314"
+    ],
+    "passwords": [
+      "123456Aa",
+      "789456Aa",
+      "456789Aa",
+      "453126Aa",
+      "756489Aa",
+      "1214568Aa"
+    ]
+  }
+}

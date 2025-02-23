@@ -6,3 +6,5 @@ export { OfferType } from './offer-type.type.js';
 export { UserType } from './user-type.type.js';
 export { CityType } from './city.type.js';
 export { Location } from './location.type.js';
+
+export { MockServerData } from './mock-server-data.type.js';
