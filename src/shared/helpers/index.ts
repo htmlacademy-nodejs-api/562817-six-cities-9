@@ -2,5 +2,7 @@ export {
   generateRandomValue,
   getRandomItems,
   getRandomItem,
-  getErrorMessage
+  getErrorMessage,
 } from './common.js';
+
+export { OFFER } from './constants.js'

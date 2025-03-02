@@ -13,7 +13,7 @@ export class TSVFileWriter implements FileWriter {
     });
   }
 
-  public async write(row: string): Promise<unknown> {
+  public async write(row: string): Promise<boolean | void> {
     const writeSuccess = this.stream.write(`${row}\n`);
     if (!writeSuccess) {
       return new Promise((resolve) => {
