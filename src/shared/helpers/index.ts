@@ -5,4 +5,4 @@ export {
   getErrorMessage,
 } from './common.js';
 
-export { OFFER } from './constants.js'
+export { OFFER } from './constants.js';

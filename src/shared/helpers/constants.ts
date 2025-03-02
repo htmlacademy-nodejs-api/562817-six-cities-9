@@ -1,4 +1,4 @@
-export const OFFER= {
+export const OFFER = {
   MIN_PRICE: 500,
   MAX_PRICE: 2000,
   FIRST_WEEK_DAY: 1,
@@ -11,4 +11,4 @@ export const OFFER= {
   MAX_GUESTS: 10,
   MIN_COMMENTS: 0,
   MAX_COMMENTS: 100,
-}
+};
