@@ -10,4 +10,4 @@ export { Location } from './location.type.js';
 export { MockServerData } from './mock-server-data.type.js';
 export { COMPONENT_MAP } from './component.map.js';
 
-export { RestSchema } from './rest-schema.type.js'
+export { RestSchema } from './rest-schema.type.js';
